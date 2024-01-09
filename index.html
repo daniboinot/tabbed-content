@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tabbed Content</title>
+    <style>
+      .tabcontent {
+        display: none;
+      }
+      .tabcontent:first-child {
+        display: block;
+      }
+      body {
+        text-align: center;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        background-color: blanchedalmond;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Most famous people in:</h1>
+    <div class="tabs">
+      <button class="tablinks" onclick="openTab(event, 'Tab1')">Rap</button>
+      <button class="tablinks" onclick="openTab(event, 'Tab2')">Lofi</button>
+      <button class="tablinks" onclick="openTab(event, 'Tab3')">Hip-Hop</button>
+    </div>
+
+    <div id="Tab1" class="tabcontent">
+      <h3>Ye</h3>
+      <p>
+        Learn about him
+        <a href="https://en.wikipedia.org/wiki/Kanye_West" target="_blank"
+          >here.</a
+        >
+      </p>
+      <p>
+        Listen to his music
+        <a
+          href="https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x"
+          target="_blank"
+          >here.</a
+        >
+      </p>
+      <img src="download.jpg" alt="photo of Ye" />
+    </div>
+
+    <div id="Tab2" class="tabcontent">
+      <h3>Nujabes</h3>
+      <p>
+        Learn more about him
+        <a href="https://en.wikipedia.org/wiki/Nujabes" target="_blank"
+          >here.</a
+        >
+      </p>
+      <p>
+        Listen to his music
+        <a
+          href="https://open.spotify.com/artist/3Rq3YOF9YG9YfCWD4D56RZ"
+          target="_blank"
+          >here.</a
+        >
+      </p>
+      <img src="nujabes.jpg" alt="photo of Nujabes" />
+    </div>
+
+    <div id="Tab3" class="tabcontent">
+      <h3>Eminem</h3>
+      <p>
+        Learn about his history
+        <a href="https://en.wikipedia.org/wiki/Eminem" target="_blanks"
+          >here.</a
+        >
+      </p>
+      <p>
+        Listen to his music
+        <a
+          href="https://open.spotify.com/artist/7dGJo4pcD2V6oG8kP0tJRR"
+          target="_blank"
+          >here.</a
+        >
+      </p>
+      <img src="eminem.jpg" alt="photo of Eminem" />
+    </div>
+
+    <script>
+      function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
+  </body>
+</html>
